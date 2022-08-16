@@ -7,7 +7,7 @@
 }
 
 .searchCon {
-  @apply col-span-3 mx-auto flex w-4/5 items-center gap-4 rounded-full border border-[#C3D4E9] py-2 px-3 md:col-span-2 md:w-full;
+  @apply col-span-3 mx-auto flex w-4/5 items-center gap-4 rounded-xl border border-[#C3D4E9] py-2 px-3 md:col-span-2 md:w-full md:rounded-full;
 }
 
 .iconCon {

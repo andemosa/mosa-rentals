@@ -1,0 +1,43 @@
+.card {
+  @apply flex min-w-max flex-1 flex-col gap-3 rounded-lg bg-white p-4 text-xs text-custom-grey md:text-sm lg:p-6;
+}
+
+.title {
+  @apply flex justify-between gap-2 text-sm md:text-base;
+}
+
+.titleName {
+  @apply font-bold text-custom-black;
+}
+
+.middle {
+  @apply flex justify-between gap-2;
+}
+
+.imgCon {
+  @apply flex w-40 items-center justify-center py-4;
+}
+
+.detailsCon {
+  @apply flex flex-col flex-wrap justify-between gap-2;
+}
+
+.detail {
+  @apply flex items-center justify-between gap-1;
+}
+
+.cta {
+  @apply flex justify-between gap-2;
+}
+
+.priceSpan {
+  @apply text-sm font-bold text-custom-black md:text-base;
+}
+
+/* .discount {
+  @apply;
+} */
+
+.button {
+  @apply flex max-w-fit items-center justify-center rounded bg-primary-blue px-4 py-2 text-white;
+}

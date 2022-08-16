@@ -1,9 +1,10 @@
 import Like from "components/Icons/Like";
 import Notification from "components/Icons/Notification";
 import Settings from "components/Icons/Settings";
+import Search from "components/Icons/Search";
+
 import s from "./Navbar.module.css";
 import user from "../../user.png";
-import Search from "components/Icons/Search";
 
 const Navbar = () => {
   return (

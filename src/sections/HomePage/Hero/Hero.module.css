@@ -1,0 +1,27 @@
+.hero {
+  @apply flex flex-col items-center py-8 md:flex-row md:justify-center  md:gap-8 lg:gap-14;
+}
+
+.heroCard {
+  @apply flex max-w-sm flex-col gap-3 rounded-lg bg-secondary-blue p-4 text-white  md:p-5 lg:max-w-max;
+}
+
+.secondCard {
+  @apply hidden flex-col gap-3 rounded-lg bg-primary-blue p-4 text-white md:flex  md:p-5;
+}
+
+.heroTitle {
+  @apply flex flex-col gap-2 md:gap-4;
+}
+
+.heroButton {
+  @apply max-w-fit rounded bg-primary-blue px-4 py-2;
+}
+
+.secondButton {
+  @apply max-w-fit rounded bg-secondary-blue px-4 py-2;
+}
+
+.heroImage {
+  @apply flex items-center justify-center p-1;
+}

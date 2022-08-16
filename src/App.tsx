@@ -6,7 +6,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="text-center selection:bg-green-900">
+    <div>
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="about" element={<About />} /> */}

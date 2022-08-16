@@ -1,0 +1,27 @@
+.card {
+  @apply mx-auto flex max-w-sm flex-col gap-6 rounded-lg bg-white p-4 md:mx-0;
+}
+
+.flexedRight {
+  @apply md:ml-auto;
+}
+
+.title {
+  @apply flex items-center gap-2 font-bold;
+}
+
+.flexed {
+  @apply flex;
+}
+
+.flexCol {
+  @apply flex flex-1 flex-col gap-1;
+}
+
+.colTitle {
+  @apply font-bold;
+}
+
+.rightBorder {
+  @apply border-r border-[#c3d4e9];
+}
