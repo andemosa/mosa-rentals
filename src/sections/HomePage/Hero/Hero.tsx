@@ -1,5 +1,3 @@
-import cn from "classnames";
-
 import car from "../../../car.png";
 import s from "./Hero.module.css";
 
@@ -8,8 +6,8 @@ const Hero = () => {
     <div className={s.hero}>
       <div className={s.heroCard}>
         <div className={s.heroTitle}>
-          <h2>The Best Platform for Car Rental</h2>
-          <h3>
+          <h2 className={s.headerPri}>The Best Platform for Car Rental</h2>
+          <h3 className={s.headerSec}>
             Ease of doing a car rental safely and reliably. Of course at a low
             price.
           </h3>
@@ -21,8 +19,8 @@ const Hero = () => {
       </div>
       <div className={s.secondCard}>
         <div className={s.heroTitle}>
-          <h2>Easy way to rent a car at a low price</h2>
-          <h3>
+          <h2 className={s.headerPri}>Easy way to rent a car at a low price</h2>
+          <h3 className={s.headerSec}>
             Providing cheap car rental services and safe and comfortable
             facilities.
           </h3>

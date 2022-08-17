@@ -18,15 +18,15 @@ const Card = ({ displayed, title, direction }: ICardProps) => {
       <div className={s.flexed}>
         <div className={s.flexCol}>
           <h4 className={s.colTitle}>Locations</h4>
-          <p>Semarang</p>
+          <p className={s.colPara}>Semarang</p>
         </div>
         <div className={s.flexCol}>
           <h4 className={s.colTitle}>Date</h4>
-          <p>20 July 2022</p>
+          <p className={s.colPara}>20 July 2022</p>
         </div>
         <div className={s.flexCol}>
           <h4 className={s.colTitle}>Time</h4>
-          <p>07.00</p>
+          <p className={s.colPara}>07.00</p>
         </div>
       </div>
     </div>

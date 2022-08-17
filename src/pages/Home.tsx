@@ -4,6 +4,7 @@ import Navbar from "components/Navbar/Navbar";
 import Selection from "sections/HomePage/Selection/Selection";
 import Popular from "sections/HomePage/Popular/Popular";
 import Recommendation from "sections/HomePage/Recommendation/Recommendation";
+import Footer from "components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <Popular />
         <Recommendation />
       </div>
+      <Footer />
     </div>
   );
 };

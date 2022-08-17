@@ -1,3 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .max-w-unset {
+    max-width: unset;
+  }
+  .max-w-img {
+    max-width: 220px;
+  }
+  .max-w-img-sm {
+    max-width: 160px;
+  }
+}

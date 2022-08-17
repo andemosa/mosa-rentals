@@ -1,29 +1,33 @@
 .card {
-  @apply flex min-w-max flex-1 flex-col gap-3 rounded-lg bg-white p-4 text-xs text-custom-grey md:text-sm lg:p-6;
+  @apply flex min-w-max max-w-sm flex-1 flex-col gap-3 rounded-lg bg-white p-4 text-xs text-custom-grey md:text-sm xl:p-6;
 }
 
 .title {
-  @apply flex justify-between gap-2 text-sm md:text-base;
-}
-
-.titleName {
-  @apply font-bold text-custom-black;
-}
-
-.middle {
   @apply flex justify-between gap-2;
 }
 
+.titleName {
+  @apply text-sm font-bold text-custom-black md:text-base;
+}
+
+.middle {
+  @apply flex justify-between gap-2 lg:flex-col;
+}
+
 .imgCon {
-  @apply flex w-40 items-center justify-center py-4;
+  @apply mx-auto flex w-40 items-center justify-center py-4;
 }
 
 .detailsCon {
-  @apply flex flex-col flex-wrap justify-between gap-2;
+  @apply flex flex-col flex-wrap justify-between gap-2 lg:flex-row;
 }
 
 .detail {
   @apply flex items-center justify-between gap-1;
+}
+
+.detailPara {
+  @apply flex-1;
 }
 
 .cta {
@@ -34,9 +38,9 @@
   @apply text-sm font-bold text-custom-black md:text-base;
 }
 
-/* .discount {
-  @apply;
-} */
+.discount {
+  @apply line-through;
+}
 
 .button {
   @apply flex max-w-fit items-center justify-center rounded bg-primary-blue px-4 py-2 text-white;

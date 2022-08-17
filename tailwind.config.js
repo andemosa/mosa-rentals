@@ -2,7 +2,7 @@ module.exports = {
   content: ["index.html", "./src/**/*.{js,jsx,ts,tsx,vue,html}"],
   theme: {
     fontFamily: {
-      sans: ["Plus Jakarta Sans", "sans-serif"],
+      sans: ["Plus Jakarta Sans"],
       serif: ["Merriweather", "serif"],
     },
     extend: {
@@ -11,6 +11,9 @@ module.exports = {
         "secondary-blue": "#5CAFFC",
         "custom-grey": "#90A3BF",
         "custom-black": "#1A202C",
+      },
+      screens: {
+        xs: "480px",
       },
     },
   },

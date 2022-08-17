@@ -24,15 +24,15 @@ const Card = () => {
         <div className={s.detailsCon}>
           <div className={s.detail}>
             <Gas />
-            <p>90L</p>
+            <p className={s.detailPara}>90L</p>
           </div>
           <div className={s.detail}>
             <Transmission />
-            <p>Manual</p>
+            <p className={s.detailPara}>Manual</p>
           </div>
           <div className={s.detail}>
             <Capacity />
-            <p>2 people</p>
+            <p className={s.detailPara}>2 people</p>
           </div>
         </div>
       </div>

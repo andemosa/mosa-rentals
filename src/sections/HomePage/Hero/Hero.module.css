@@ -3,25 +3,33 @@
 }
 
 .heroCard {
-  @apply flex max-w-sm flex-col gap-3 rounded-lg bg-secondary-blue p-4 text-white  md:p-5 lg:max-w-max;
+  @apply md:max-w-unset flex max-w-sm flex-1 flex-col gap-3 rounded-lg bg-secondary-blue p-4  text-white md:p-5;
 }
 
 .secondCard {
-  @apply hidden flex-col gap-3 rounded-lg bg-primary-blue p-4 text-white md:flex  md:p-5;
+  @apply hidden flex-1 flex-col gap-3 rounded-lg bg-primary-blue p-4 text-white md:flex  md:p-5;
 }
 
 .heroTitle {
   @apply flex flex-col gap-2 md:gap-4;
 }
 
+.headerPri {
+  @apply font-semibold md:text-xl;
+}
+
+.headerSec {
+  @apply text-xs font-semibold md:text-sm;
+}
+
 .heroButton {
-  @apply max-w-fit rounded bg-primary-blue px-4 py-2;
+  @apply max-w-fit rounded bg-primary-blue px-4 py-2 text-xs md:text-sm;
 }
 
 .secondButton {
-  @apply max-w-fit rounded bg-secondary-blue px-4 py-2;
+  @apply max-w-fit rounded bg-secondary-blue px-4 py-2 text-xs md:text-sm;
 }
 
 .heroImage {
-  @apply flex items-center justify-center p-1;
+  @apply flex items-center justify-center p-1 lg:p-4;
 }

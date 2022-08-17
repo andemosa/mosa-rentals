@@ -22,7 +22,11 @@ const Navbar = () => {
       </div>
       <div className={s.searchCon}>
         <Search />
-        <input type="text" placeholder="Search something here" />
+        <input
+          type="text"
+          placeholder="Search something here"
+          className={s.searchInput}
+        />
       </div>
     </nav>
   );

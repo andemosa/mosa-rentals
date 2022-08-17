@@ -1,5 +1,5 @@
 .card {
-  @apply mx-auto flex max-w-sm flex-col gap-6 rounded-lg bg-white p-4 md:mx-0;
+  @apply md:max-w-unset mx-auto flex max-w-sm flex-col gap-6 rounded-lg bg-white p-4 md:mx-0;
 }
 
 .flexedRight {
@@ -11,7 +11,7 @@
 }
 
 .flexed {
-  @apply flex;
+  @apply flex gap-1;
 }
 
 .flexCol {
@@ -19,7 +19,11 @@
 }
 
 .colTitle {
-  @apply font-bold;
+  @apply text-sm font-bold sm:text-base;
+}
+
+.colPara {
+  @apply text-xs sm:text-sm;
 }
 
 .rightBorder {
