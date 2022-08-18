@@ -15,11 +15,11 @@
 }
 
 .headerPri {
-  @apply font-semibold md:text-xl;
+  @apply font-semibold lg:text-xl;
 }
 
 .headerSec {
-  @apply text-xs font-semibold md:text-sm;
+  @apply text-xs font-semibold lg:text-sm;
 }
 
 .heroButton {
