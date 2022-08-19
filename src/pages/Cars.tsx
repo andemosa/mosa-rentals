@@ -1,32 +1,21 @@
-import {
-  useLocation,
-  NavLink,
-  Outlet,
-  useSearchParams,
-  Link,
-} from "react-router-dom";
-
-function QueryNavLink({ to, ...props }: { to: string }) {
-  let location = useLocation();
-  return <NavLink to={to + location.search} {...props} />;
-}
+import Sort from "components/Sidebar/Sort";
+import Card from "sections/HomePage/Recommendation/Card/Card";
+import Selection from "sections/HomePage/Selection/Selection";
 
 const Cars = () => {
   return (
     <div className="flex h-full flex-1">
-      <div className="flex-[1] bg-white">
-        {Array.from({ length: 4 }).map((_, idx) => (
-          <Link
-            style={{ display: "block", margin: "1rem 0" }}
-            to={`/cars/${idx}`}
-            key={idx}
-          >
-            {idx}
-          </Link>
-        ))}
-      </div>
-      <div className="flex-[3]">
-        <Outlet />
+      <Sort />
+      <div className="flex-[4] p-4 lg:p-8">
+        <Selection />
+        <div className="my-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </div>
     </div>
   );

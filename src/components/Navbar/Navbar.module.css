@@ -1,5 +1,5 @@
 .navbar {
-  @apply grid grid-cols-3 gap-y-4 bg-white px-4 py-7 md:grid-cols-4 md:px-6 xl:px-20;
+  @apply grid grid-cols-3 gap-y-4 border-[#c3d4e9] bg-white px-4 py-7 md:grid-cols-4 md:border md:px-6 xl:px-14;
 }
 
 .logo {

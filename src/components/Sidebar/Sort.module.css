@@ -1,0 +1,27 @@
+.container {
+  @apply hidden flex-[1] flex-col gap-12 border border-[#F3F5F7] bg-white p-8 lg:flex;
+}
+
+.headings {
+  @apply mb-2 text-xs text-custom-grey;
+}
+
+.inputCon {
+  @apply flex items-center;
+}
+
+.checkbox {
+  @apply my-1 h-4 w-4 rounded border-custom-grey accent-primary-blue;
+}
+
+.label {
+  @apply ml-2 text-sm font-medium text-custom-dark-grey;
+}
+
+.numberSpan {
+  @apply text-custom-grey;
+}
+
+.range {
+  @apply w-full cursor-pointer rounded-lg;
+}

@@ -6,9 +6,11 @@ import Recommendation from "sections/HomePage/Recommendation/Recommendation";
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-4 px-4 md:px-6 xl:px-20">
+    <div className="flex flex-col gap-4 px-4 md:px-6 xl:px-14">
       <Hero />
-      <Selection />
+      <div className="my-4 md:py-2 lg:py-8">
+        <Selection />
+      </div>
       <Popular />
       <Recommendation />
     </div>

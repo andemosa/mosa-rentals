@@ -19,14 +19,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="payment" element={<Payment />} />
         <Route path="cars" element={<Cars />}>
-          <Route
-            index
-            element={
-              <main style={{ padding: "1rem" }}>
-                <p>Select a car</p>
-              </main>
-            }
-          />
           <Route path=":carId" element={<Car />} />
         </Route>
       </Routes>
