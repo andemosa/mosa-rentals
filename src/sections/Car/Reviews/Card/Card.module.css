@@ -1,0 +1,27 @@
+.card {
+  @apply my-3 flex justify-between gap-1 text-[11px] xs:text-xs;
+}
+
+.imageCon {
+  @apply flex max-h-8 flex-1 items-center justify-center;
+}
+
+.img {
+  @apply h-full w-full rounded-full  object-contain;
+}
+
+.body {
+  @apply flex flex-[8] flex-col gap-2 sm:flex-[10] md:flex-[15] lg:flex-[18] xl:flex-[20];
+}
+
+.flexed {
+  @apply flex justify-between text-custom-grey;
+}
+
+.name {
+  @apply text-sm font-semibold text-custom-black;
+}
+
+.desc {
+  @apply text-custom-dark-grey lg:text-sm;
+}

@@ -1,0 +1,95 @@
+.wrapper {
+  @apply flex flex-col gap-8 sm:flex-row;
+}
+
+.left {
+  @apply flex flex-1 flex-col gap-6;
+}
+
+.right {
+  @apply flex flex-1 flex-col justify-between gap-6 rounded-lg bg-white p-4 md:p-6;
+}
+
+.card {
+  @apply flex flex-1 flex-col justify-between gap-3 rounded-lg bg-primary-blue p-4  text-white md:p-5;
+}
+
+.title {
+  @apply flex flex-col gap-2 text-left md:gap-4;
+}
+
+.headerPri {
+  @apply font-semibold lg:text-2xl;
+}
+
+.headerSec {
+  @apply text-xs font-medium lg:text-base;
+}
+
+.image {
+  @apply flex items-center justify-center p-1 lg:p-4;
+}
+
+.imagesCon {
+  @apply flex justify-between gap-5 lg:gap-6;
+}
+
+.imageCon {
+  @apply flex max-h-24 max-w-[33%] items-center justify-center;
+}
+
+.fitImg {
+  @apply h-full w-full rounded object-contain;
+}
+
+.nameCon {
+  @apply flex justify-between;
+}
+
+.name {
+  @apply text-xl text-custom-black lg:text-3xl;
+}
+
+.reviewNum {
+  @apply text-sm text-custom-grey;
+}
+
+.desc {
+  @apply text-sm text-custom-dark-grey lg:text-base;
+}
+
+.flexed {
+  @apply flex flex-1 justify-between text-xs lg:text-base;
+}
+
+.key {
+  @apply text-custom-grey;
+}
+
+.value {
+  @apply text-custom-dark-grey;
+}
+
+.specs {
+  @apply flex justify-between gap-4 lg:gap-10;
+}
+
+.specsDiv {
+  @apply flex flex-1 flex-col gap-3;
+}
+
+.cta {
+  @apply flex justify-between gap-2 text-xs;
+}
+
+.priceSpan {
+  @apply text-base font-bold text-custom-black md:text-lg;
+}
+
+.discount {
+  @apply line-through;
+}
+
+.button {
+  @apply flex max-w-fit items-center justify-center rounded bg-primary-blue px-4 py-2 text-white;
+}
