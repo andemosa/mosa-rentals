@@ -9,7 +9,7 @@ const apiClient = axios.create({
   },
 });
 
-const findAll = async () => {
+export const findAllCars = async () => {
   const response = await apiClient.get<ICar[]>("/cars");
   return response.data;
 };
