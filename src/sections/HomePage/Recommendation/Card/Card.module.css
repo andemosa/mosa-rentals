@@ -1,5 +1,5 @@
 .card {
-  @apply flex min-w-max max-w-sm flex-1 flex-col gap-3 rounded-lg bg-white p-4 text-xs text-custom-grey md:text-sm xl:p-6;
+  @apply flex min-w-max max-w-sm flex-1 flex-col justify-between gap-3 rounded-lg bg-white p-4 text-xs text-custom-grey md:text-sm xl:p-6;
 }
 
 .title {
@@ -31,7 +31,7 @@
 }
 
 .cta {
-  @apply flex justify-between gap-2;
+  @apply flex items-center justify-between gap-2;
 }
 
 .priceSpan {

@@ -4,14 +4,24 @@ import car from "../../../../car.png";
 import Gas from "components/Icons/Gas";
 import Transmission from "components/Icons/Transmission";
 import Capacity from "components/Icons/Capacity";
+import { ICar } from "types/Car";
 
-const Card = () => {
+const Card = ({
+  name,
+  brand,
+  images,
+  transmission,
+  gasoline,
+  capacity,
+  price,
+  discount,
+}: ICar) => {
   return (
     <div className={s.card}>
       <div className={s.title}>
         <div>
-          <h4 className={s.titleName}>Koenigsegg</h4>
-          <p>Sport</p>
+          <h4 className={s.titleName}>{name}</h4>
+          <p>{brand}</p>
         </div>
         <div>
           <Favourite />
@@ -19,29 +29,32 @@ const Card = () => {
       </div>
       <div className={s.middle}>
         <div className={s.imgCon}>
-          <img src={car} alt="" />
+          <img src={images![0]} alt={name} />
         </div>
         <div className={s.detailsCon}>
           <div className={s.detail}>
             <Gas />
-            <p className={s.detailPara}>90L</p>
+            <p className={s.detailPara}>{gasoline}L</p>
           </div>
           <div className={s.detail}>
             <Transmission />
-            <p className={s.detailPara}>Manual</p>
+            <p className={s.detailPara}>{transmission}</p>
           </div>
           <div className={s.detail}>
             <Capacity />
-            <p className={s.detailPara}>2 people</p>
+            <p className={s.detailPara}>{capacity} people</p>
           </div>
         </div>
       </div>
       <div className={s.cta}>
         <div>
           <p>
-            <span className={s.priceSpan}>$99.00 /</span> day
+            <span className={s.priceSpan}>
+              ${discount! > 0 ? (((100 - discount!) / 100) * price).toFixed(2) : price}/
+            </span>
+            &nbsp; day
           </p>
-          <p className={s.discount}>$100.00</p>
+          <p className={s.discount}>{discount! > 0 && <>${price}</>}</p>
         </div>
         <div className={s.button}>Rent Now</div>
       </div>

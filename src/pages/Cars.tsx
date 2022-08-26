@@ -16,6 +16,14 @@ const Cars = () => {
           <Card />
           <Card />
         </div>
+        <div className="sm:max-w-unset relative my-8 flex max-w-sm items-center justify-center">
+          <div className="flex max-w-fit items-center justify-center rounded bg-primary-blue px-4 py-2 text-xs text-white md:text-sm">
+            Show more cars
+          </div>
+          <div className="absolute right-0 bottom-0 text-xs text-custom-grey md:text-sm">
+            120 car
+          </div>
+        </div>
       </div>
     </div>
   );
