@@ -7,9 +7,9 @@ import { findAllCars } from "services/CarService";
 const Cars = () => {
   const { isLoading, error, data } = useQuery(["allCars"], findAllCars);
 
-  if (isLoading) return "Loading...";
+  if (isLoading) return <>Loading...</>;
 
-  if (error) return "An error has occurred: ";
+  if (error) return <>An error has occurred: </>;
 
   return (
     <div className="flex h-full flex-1">

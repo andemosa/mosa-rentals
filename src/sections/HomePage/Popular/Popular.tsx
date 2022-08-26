@@ -6,9 +6,9 @@ import Card from "./Card/Card";
 const Popular = () => {
   const { isLoading, error, data } = useQuery(["popularCars"], findPopularCars);
 
-  if (isLoading) return "Loading...";
+  if (isLoading) return <>Loading...</>;
 
-  if (error) return "An error has occurred: ";
+  if (error) return <>An error has occurred: </>;
 
   return (
     <section className="my-4">
