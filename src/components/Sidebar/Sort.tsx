@@ -1,13 +1,23 @@
+import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
+import { findCarOptions } from "services/CarService";
 import s from "./Sort.module.css";
 
 const Sort = () => {
+  const { isLoading, error, data } = useQuery(["carOptions"], findCarOptions);
+  const [value, setValue] = useState("");
+
+  if (isLoading) return <>Loading...</>;
+
+  if (error) return <>An error has occurred: </>;
+
   return (
     <div className={s.container}>
       <div>
         <p className={s.headings}>TYPE</p>
         <div>
-          {Array.from({ length: 5 }).map((_, idx) => (
-            <div className={s.inputCon} key={idx}>
+          {data?.brands?.map((brand) => (
+            <div className={s.inputCon} key={brand?._id}>
               <input
                 // checked
                 id="checked-checkbox"
@@ -16,7 +26,8 @@ const Sort = () => {
                 className={s.checkbox}
               />
               <label htmlFor="checked-checkbox" className={s.label}>
-                MPV <span className={s.numberSpan}>({idx})</span>
+                {brand?._id}{" "}
+                <span className={s.numberSpan}>({brand?.total})</span>
               </label>
             </div>
           ))}
@@ -25,8 +36,8 @@ const Sort = () => {
       <div>
         <p className={s.headings}>CAPACITY</p>
         <div>
-          {Array.from({ length: 5 }).map((_, idx) => (
-            <div className={s.inputCon} key={idx}>
+          {data?.capacities?.map((cap) => (
+            <div className={s.inputCon} key={cap?._id}>
               <input
                 // checked
                 id="checked-checkbox"
@@ -35,14 +46,15 @@ const Sort = () => {
                 className={s.checkbox}
               />
               <label htmlFor="checked-checkbox" className={s.label}>
-                2 Person <span className={s.numberSpan}>({idx})</span>
+                {cap?._id} {cap?._id === 1 ? "Person" : "Persons"}&nbsp;
+                <span className={s.numberSpan}>({cap?.total})</span>
               </label>
             </div>
           ))}
         </div>
       </div>
       <div>
-        <p className={s.headings}>PRICE</p>
+        <p className={s.headings}>PRICE - {value}</p>
         <div>
           {/* <label
             htmlFor="default-range"
@@ -53,11 +65,13 @@ const Sort = () => {
           <input
             id="default-range"
             type="range"
-            // value="50"
+            value={value}
             className={s.range}
+            max={data?.maxPrice[0].price}
+            onChange={(e) => setValue(e.target.value)}
           />
           <label htmlFor="default-range" className={s.label}>
-            Max. $100.00
+            Max. ${data?.maxPrice[0].price}
           </label>
         </div>
       </div>

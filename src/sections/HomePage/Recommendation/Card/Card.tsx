@@ -5,6 +5,7 @@ import Gas from "components/Icons/Gas";
 import Transmission from "components/Icons/Transmission";
 import Capacity from "components/Icons/Capacity";
 import { ICar } from "types/Car";
+import { Link } from "react-router-dom";
 
 const Card = ({
   name,
@@ -15,6 +16,7 @@ const Card = ({
   capacity,
   price,
   discount,
+  _id,
 }: ICar) => {
   return (
     <div className={s.card}>
@@ -50,13 +52,19 @@ const Card = ({
         <div>
           <p>
             <span className={s.priceSpan}>
-              ${discount! > 0 ? (((100 - discount!) / 100) * price).toFixed(2) : price}/
+              $
+              {discount! > 0
+                ? (((100 - discount!) / 100) * price).toFixed(2)
+                : price}
+              /
             </span>
             &nbsp; day
           </p>
           <p className={s.discount}>{discount! > 0 && <>${price}</>}</p>
         </div>
-        <div className={s.button}>Rent Now</div>
+        <div className={s.button}>
+          <Link to={`/cars/${_id}`}>Rent Now</Link>
+        </div>
       </div>
     </div>
   );

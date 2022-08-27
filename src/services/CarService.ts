@@ -25,3 +25,17 @@ export const findRecommendedCars = async () => {
   );
   return response.data;
 };
+
+export const findCar = async (id: string) => {
+  const response = await apiClient.get<ICar>(`/cars/${id}`);
+  return response.data;
+};
+
+export const findCarOptions = async () => {
+  const response = await apiClient.get<{
+    brands: { _id: string; total: number }[];
+    capacities: { _id: number; total: number }[];
+    maxPrice: { _id: string; price: number }[];
+  }>(`/cars/options`);
+  return response.data;
+};
