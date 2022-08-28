@@ -1,15 +1,52 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
+import { Link } from "react-router-dom";
+
 import { findCarOptions } from "services/CarService";
+
 import s from "./Sort.module.css";
 
 const Sort = () => {
   const { isLoading, error, data } = useQuery(["carOptions"], findCarOptions);
   const [value, setValue] = useState("");
+  const [brands, setBrands] = useState<string[]>([]);
+  const [capacities, setCapacities] = useState<string[]>([]);
 
   if (isLoading) return <>Loading...</>;
 
   if (error) return <>An error has occurred: </>;
+
+  const handleBrand = (event: ChangeEvent<HTMLInputElement>) => {
+    let updatedList = [...brands];
+    if (event.target.checked) {
+      updatedList = [...brands, event.target.value];
+    } else {
+      updatedList.splice(brands.indexOf(event.target.value), 1);
+    }
+    setBrands(updatedList);
+  };
+
+  const handleCapacity = (event: ChangeEvent<HTMLInputElement>) => {
+    let updatedList = [...capacities];
+    if (event.target.checked) {
+      updatedList = [...capacities, event.target.value];
+    } else {
+      updatedList.splice(capacities.indexOf(event.target.value), 1);
+    }
+    setCapacities(updatedList);
+  };
+
+  const brandQuery = brands.length
+    ? brands.reduce((total, item) => {
+        return total + ", " + item;
+      })
+    : "";
+
+  const capacitiesQuery = capacities.length
+    ? capacities.reduce((total, item) => {
+        return total + ", " + item;
+      })
+    : "";
 
   return (
     <div className={s.container}>
@@ -20,13 +57,14 @@ const Sort = () => {
             <div className={s.inputCon} key={brand?._id}>
               <input
                 // checked
-                id="checked-checkbox"
+                id={brand?._id}
                 type="checkbox"
-                value=""
+                value={brand?._id}
                 className={s.checkbox}
+                onChange={handleBrand}
               />
-              <label htmlFor="checked-checkbox" className={s.label}>
-                {brand?._id}{" "}
+              <label htmlFor={brand?._id} className={s.label}>
+                {brand?._id}&nbsp;
                 <span className={s.numberSpan}>({brand?.total})</span>
               </label>
             </div>
@@ -40,12 +78,13 @@ const Sort = () => {
             <div className={s.inputCon} key={cap?._id}>
               <input
                 // checked
-                id="checked-checkbox"
+                id={cap?._id.toString()}
                 type="checkbox"
-                value=""
+                value={cap?._id.toString()}
                 className={s.checkbox}
+                onChange={handleCapacity}
               />
-              <label htmlFor="checked-checkbox" className={s.label}>
+              <label htmlFor={cap?._id.toString()} className={s.label}>
                 {cap?._id} {cap?._id === 1 ? "Person" : "Persons"}&nbsp;
                 <span className={s.numberSpan}>({cap?.total})</span>
               </label>
@@ -56,12 +95,6 @@ const Sort = () => {
       <div>
         <p className={s.headings}>PRICE - {value}</p>
         <div>
-          {/* <label
-            htmlFor="default-range"
-            className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
-          >
-            Default range
-          </label> */}
           <input
             id="default-range"
             type="range"
@@ -73,6 +106,15 @@ const Sort = () => {
           <label htmlFor="default-range" className={s.label}>
             Max. ${data?.maxPrice[0].price}
           </label>
+        </div>
+      </div>
+      <div className="my-2 flex items-center justify-center">
+        <div className="flex max-w-fit items-center justify-center rounded bg-primary-blue px-4 py-2 text-white">
+          <Link
+            to={`/cars/query?brands=${brandQuery}&capacities=${capacitiesQuery}&price=${value}`}
+          >
+            Search
+          </Link>
         </div>
       </div>
     </div>

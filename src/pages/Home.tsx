@@ -1,5 +1,4 @@
 import Hero from "sections/HomePage/Hero/Hero";
-
 import Selection from "sections/HomePage/Selection/Selection";
 import Popular from "sections/HomePage/Popular/Popular";
 import Recommendation from "sections/HomePage/Recommendation/Recommendation";

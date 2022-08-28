@@ -1,7 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import { findRecommendedCars } from "services/CarService";
+
 import Card from "./Card/Card";
+
+import { findRecommendedCars } from "services/CarService";
 
 const Recommendation = () => {
   const { isLoading, error, data } = useQuery(

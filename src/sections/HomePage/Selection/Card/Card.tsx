@@ -1,5 +1,6 @@
 import cn from "classnames";
 import { ReactNode } from "react";
+
 import s from "./Card.module.css";
 
 interface ICardProps {

@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
+
 import Favourite from "components/Icons/Favourite";
-import s from "./Card.module.css";
-import car from "../../../../car.png";
 import Gas from "components/Icons/Gas";
 import Transmission from "components/Icons/Transmission";
 import Capacity from "components/Icons/Capacity";
+
 import { ICar } from "types/Car";
-import { Link } from "react-router-dom";
+
+import s from "./Card.module.css";
+
 
 const Card = ({
   name,

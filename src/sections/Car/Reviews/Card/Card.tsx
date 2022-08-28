@@ -1,4 +1,5 @@
 import s from "./Card.module.css";
+
 import user from "../../../../user.png";
 
 const Card = () => {

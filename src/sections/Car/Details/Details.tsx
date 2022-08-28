@@ -1,8 +1,8 @@
-import s from "./Details.module.css";
-import car from "../../../car.png";
-import carView from "../../../car-view.png";
 import Favourite from "components/Icons/Favourite";
+
 import { ICar } from "types/Car";
+
+import s from "./Details.module.css";
 
 const Details = ({
   headline,
@@ -32,13 +32,13 @@ const Details = ({
         </div>
         <div className={s.imagesCon}>
           <div className={s.imageCon}>
-            <img src={car} alt="" className={s.fitImg} />
+            <img src={images![0]} alt={name} className={s.fitImg} />
           </div>
           <div className={s.imageCon}>
-            <img src={car} alt="" className={s.fitImg} />
+            <img src={images![0]} alt={name} className={s.fitImg} />
           </div>
           <div className={s.imageCon}>
-            <img src={carView} alt="" className={s.fitImg} />
+            <img src={images![0]} alt={name} className={s.fitImg} />
           </div>
         </div>
       </div>

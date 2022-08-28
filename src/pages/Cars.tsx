@@ -1,7 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
+
 import Sort from "components/Sidebar/Sort";
+
 import Card from "sections/HomePage/Recommendation/Card/Card";
 import Selection from "sections/HomePage/Selection/Selection";
+
 import { findAllCars } from "services/CarService";
 
 const Cars = () => {
@@ -17,7 +20,7 @@ const Cars = () => {
       <div className="flex-[4] p-4 lg:p-8">
         <Selection />
         <div className="my-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-          {data?.slice(8).map((item) => (
+          {data?.cars?.slice(8).map((item) => (
             <Card {...item} key={item._id} />
           ))}
         </div>
@@ -26,7 +29,7 @@ const Cars = () => {
             Show more cars
           </div>
           <div className="absolute right-0 bottom-0 text-xs text-custom-grey md:text-sm">
-            120 car
+            {data?.numCars} {data?.numCars === 1 ? "car" : "cars"}
           </div>
         </div>
       </div>

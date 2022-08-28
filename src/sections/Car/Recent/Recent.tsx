@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
+
 import Card from "sections/HomePage/Popular/Card/Card";
+
 import { findPopularCars } from "services/CarService";
 
 const Recent = () => {
