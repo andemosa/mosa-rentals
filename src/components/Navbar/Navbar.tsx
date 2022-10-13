@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Like from "components/Icons/Like";
 import Notification from "components/Icons/Notification";
 import Settings from "components/Icons/Settings";
@@ -9,7 +11,9 @@ import user from "../../user.png";
 const Navbar = () => {
   return (
     <nav className={s.navbar}>
-      <div className={s.logo}>MOSA-RENT</div>
+      <div className={s.logo}>
+        <Link to="/">MOSA-RENT</Link>
+      </div>
       <div className={s.iconCon}>
         <div className={s.iconsCon}>
           <Like />

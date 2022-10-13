@@ -23,14 +23,11 @@ const Car = () => {
   if (error) return <>An error has occurred: </>;
 
   return (
-    <div className="flex h-full flex-1">
-      <Sort />
-      <div className="flex-[4] overflow-x-auto p-4 lg:p-8">
-        <Details {...data as ICar} />
-        <Reviews {...data as ICar} />
-        <Recent />
-        <Recommendation />
-      </div>
+    <div className="flex-[4] overflow-x-auto">
+      <Details {...(data as ICar)} />
+      <Reviews {...(data as ICar)} />
+      <Recent />
+      <Recommendation />
     </div>
   );
 };

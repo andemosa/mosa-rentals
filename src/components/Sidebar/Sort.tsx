@@ -1,22 +1,25 @@
 import { useQuery } from "@tanstack/react-query";
 import { ChangeEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { findCarOptions } from "services/CarService";
 
 import s from "./Sort.module.css";
 
 const Sort = () => {
+  const navigate = useNavigate();
   const { isLoading, error, data } = useQuery(["carOptions"], findCarOptions);
+  const [message, setMessage] = useState("");
   const [value, setValue] = useState("");
   const [brands, setBrands] = useState<string[]>([]);
-  const [capacities, setCapacities] = useState<string[]>([]);
+  const [capacity, setCapacity] = useState<string>("");
 
   if (isLoading) return <>Loading...</>;
 
   if (error) return <>An error has occurred: </>;
 
   const handleBrand = (event: ChangeEvent<HTMLInputElement>) => {
+    setMessage("");
     let updatedList = [...brands];
     if (event.target.checked) {
       updatedList = [...brands, event.target.value];
@@ -26,14 +29,14 @@ const Sort = () => {
     setBrands(updatedList);
   };
 
+  const handlePrice = (event: ChangeEvent<HTMLInputElement>) => {
+    setMessage("");
+    setCapacity(event.target.value);
+  };
+
   const handleCapacity = (event: ChangeEvent<HTMLInputElement>) => {
-    let updatedList = [...capacities];
-    if (event.target.checked) {
-      updatedList = [...capacities, event.target.value];
-    } else {
-      updatedList.splice(capacities.indexOf(event.target.value), 1);
-    }
-    setCapacities(updatedList);
+    setMessage("");
+    setValue(event.target.value);
   };
 
   const brandQuery = brands.length
@@ -42,11 +45,25 @@ const Sort = () => {
       })
     : "";
 
-  const capacitiesQuery = capacities.length
-    ? capacities.reduce((total, item) => {
-        return total + ", " + item;
-      })
-    : "";
+  const searchCars = () => {
+    setMessage("");
+    if (!value) {
+      setMessage("Please select a price");
+      return;
+    }
+    if (!capacity) {
+      setMessage("Please select a capacity");
+      return;
+    }
+    if (brands.length <= 0) {
+      setMessage("Please select a brand");
+      return;
+    }
+
+    navigate(
+      `/cars/search?brand=${brandQuery}&capacity=${capacity}&price=${value}`
+    );
+  };
 
   return (
     <div className={s.container}>
@@ -77,10 +94,10 @@ const Sort = () => {
           {data?.capacities?.map((cap) => (
             <div className={s.inputCon} key={cap?._id}>
               <input
-                // checked
                 id={cap?._id.toString()}
-                type="checkbox"
+                type="radio"
                 value={cap?._id.toString()}
+                name="capacity"
                 className={s.checkbox}
                 onChange={handleCapacity}
               />
@@ -101,20 +118,20 @@ const Sort = () => {
             value={value}
             className={s.range}
             max={data?.maxPrice[0].price}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handlePrice}
           />
           <label htmlFor="default-range" className={s.label}>
             Max. ${data?.maxPrice[0].price}
           </label>
         </div>
       </div>
+      {message}
       <div className="my-2 flex items-center justify-center">
-        <div className="flex max-w-fit items-center justify-center rounded bg-primary-blue px-4 py-2 text-white">
-          <Link
-            to={`/cars/query?brands=${brandQuery}&capacities=${capacitiesQuery}&price=${value}`}
-          >
-            Search
-          </Link>
+        <div
+          className="flex max-w-fit items-center justify-center rounded bg-primary-blue px-4 py-2 text-white"
+          onClick={searchCars}
+        >
+          Search
         </div>
       </div>
     </div>

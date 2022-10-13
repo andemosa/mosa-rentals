@@ -2,7 +2,7 @@ import axios from "axios";
 import { ICar } from "types/Car";
 // import.meta.env.VITE_BASE_URL
 
-const apiClient = axios.create({
+export const apiClient = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
   headers: {
     "Content-type": "application/json",
@@ -39,5 +39,22 @@ export const findCarOptions = async () => {
     capacities: { _id: number; total: number }[];
     maxPrice: { _id: string; price: number }[];
   }>(`/cars/options`);
+  return response.data;
+};
+
+export const findCarsSearch = async ({
+  brands,
+  capacities,
+  price,
+}: {
+  brands: string;
+  capacities: string;
+  price: string;
+}) => {
+  const response = await apiClient.post(`/cars/search`, {
+    brands,
+    capacities,
+    price,
+  });
   return response.data;
 };
