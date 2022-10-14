@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { ChangeEvent, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { findCarOptions } from "services/CarService";
 
@@ -11,8 +11,8 @@ const Sort = () => {
   const { isLoading, error, data } = useQuery(["carOptions"], findCarOptions);
   const [message, setMessage] = useState("");
   const [value, setValue] = useState("");
+  const [capacity, setCapacity] = useState("");
   const [brands, setBrands] = useState<string[]>([]);
-  const [capacity, setCapacity] = useState<string>("");
 
   if (isLoading) return <>Loading...</>;
 
@@ -31,12 +31,12 @@ const Sort = () => {
 
   const handlePrice = (event: ChangeEvent<HTMLInputElement>) => {
     setMessage("");
-    setCapacity(event.target.value);
+    setValue(event.target.value);
   };
 
   const handleCapacity = (event: ChangeEvent<HTMLInputElement>) => {
     setMessage("");
-    setValue(event.target.value);
+    setCapacity(event.target.value);
   };
 
   const brandQuery = brands.length
