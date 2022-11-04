@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import Card from "sections/HomePage/Popular/Card/Card";
+import Card from "sections/HomePage/Recommendation/Card/Card";
 
 import { findRecommendedCars } from "services/CarService";
 

@@ -1,5 +1,5 @@
 .card {
-  @apply flex min-w-max max-w-sm flex-1 flex-col justify-between gap-3 rounded-lg bg-white p-4 text-xs text-custom-grey md:text-sm xl:p-6;
+  @apply flex min-w-max max-w-sm flex-1 flex-col justify-between gap-3 rounded-lg bg-white p-3 text-xs text-custom-grey md:text-sm xl:p-6;
 }
 
 .title {
@@ -19,7 +19,7 @@
 }
 
 .detailsCon {
-  @apply flex flex-col flex-wrap justify-between gap-2 md:flex-row;
+  @apply flex flex-col flex-wrap justify-between gap-1 md:flex-row;
 }
 
 .detail {
